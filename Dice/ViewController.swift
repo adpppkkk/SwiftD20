@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -23,6 +24,11 @@ class ViewController: UIViewController {
         let imageName = "d\(rng)"
         
         DiceImageView.image = UIImage(named: imageName)
+    }
+    
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        rollDice()
     }
     
     @IBAction func rollDiceFromButton(){
