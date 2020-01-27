@@ -84,11 +84,24 @@ class ViewController: UIViewController {
     
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        
         rollDice()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2){
+            self.rollDice()
+            DispatchQueue.main.asyncAfter(deadline: .now()+3){
+            self.rollDice()
+        }
+        }
     }
     
     @IBAction func rollDiceFromButton(){
         rollDice()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2){
+            self.rollDice()
+            DispatchQueue.main.asyncAfter(deadline: .now()+3){
+            self.rollDice()
+        }
+        }
     }
 
 }
